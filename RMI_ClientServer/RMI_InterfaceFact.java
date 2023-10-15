@@ -1,5 +1,6 @@
-package RMI_ClientServer;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-public class RMI_InterfaceFact {
-    
+public interface RMI_InterfaceFact extends Remote{
+    public double computeFactorial(double input) throws RemoteException;
 }
