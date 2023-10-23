@@ -14,7 +14,7 @@ public class RMI_Client {
             RMI_InterfaceSumN sumN = (RMI_InterfaceSumN) Naming.lookup("rmi://192.168.135.13:8888/sumn");
             scan = new Scanner(System.in);
 
-            for (;;) {
+            while (true) {
                 System.out.println("*******************************************");
                 System.out.println("THE RMI App for Factorial and Sum upto N");
                 System.out.println();
@@ -25,7 +25,11 @@ public class RMI_Client {
                 double n = sumN.sumUptoN(getInput());
 
                 System.out.println("Sum : " + (f + n));
-                System.out.println();
+                System.out.println("Do you want to continue? (1 for yes, 2 for no): ");
+                int choice = getChoice();
+                if (choice == 2) {
+                    break;
+                }
             }
 
         } catch (Exception e) {
