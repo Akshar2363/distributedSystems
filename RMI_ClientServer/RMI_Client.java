@@ -37,17 +37,6 @@ public class RMI_Client {
     }
 
 
-    public static int getChoice(){
-        try{
-            int input = scan.nextInt();
-            if(input<1 ||input>2)  throw new Exception();
-            return input;
-        }catch(Exception e){
-            System.err.print("ERROR: Please input 1 or 2 : ");
-            return getChoice();
-        }
-    }
-
     public static double getInput(){
         try{
             double input = scan.nextInt();
