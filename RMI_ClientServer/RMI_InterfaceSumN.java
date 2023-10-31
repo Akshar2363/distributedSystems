@@ -1,5 +1,8 @@
 package RMI_ClientServer;
 
-public class RMI_InterfaceSumN {
-    
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface RMI_InterfaceSumN extends Remote{
+    public double sumUptoN(double input) throws RemoteException;
 }
