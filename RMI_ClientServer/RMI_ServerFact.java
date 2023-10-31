@@ -3,23 +3,23 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-public class RMI_ServerFact extends UnicastRemoteObject implements RMI_InterfaceFact {
-    public RMI_ServerFact() throws RemoteException {
+public class RMI_ServerFact extends UnicastRemoteObject implements RMI_InterfaceFact{
+    public RMI_ServerFact() throws RemoteException{
         super();
     }
 
-    @Override
-    public double computeFactorial(double n) throws RemoteException {
+    @Override 
+    public double computeFactorial(double n) throws RemoteException{
 
+        System.out.println("Computing factorial for :" +n );
         double fact = 1;
-        for (int i = 1; i <= n; i++) {
+        for(int i = 1;i<=n;i++){
             fact = fact * i;
         }
-        System.out.println("Factorial of " + n + " is: " + fact); 
         return fact;
     }
-
     public static void main(String[] args) {
+
         try {
             Registry registry = LocateRegistry.createRegistry(7777);
             registry.bind("fact", new RMI_ServerFact());
